@@ -4,6 +4,9 @@
 #image_optim *.{jpg,png,gif,svg} #to read this files and 
 #-r to recrusive in dirs
 #also get the image_optim.yml from this repo (or make your own)
+#copy image_optim.yml to $XDG_CONFIG_HOME/image_optim.yml (by default ~/.config/image_optim.yml)
+#.image_optim.yml in current working directory
+
 
 #for redhat 
 
