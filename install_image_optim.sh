@@ -8,7 +8,10 @@
 #.image_optim.yml in current working directory
 
 
+
 #for redhat 
+#install imagemagick
+yum -y install ImageMagick.*
 
 #install ruby and gem
 yum -y install ruby
