@@ -1,0 +1,47 @@
+nice: 20
+threads: 2
+verbose: false
+
+advpng:
+
+    level:4
+
+gifsicle:
+
+    interlace:false
+
+jhead:
+
+jpegoptim:
+
+    strip:all
+    max_quality:50
+
+jpegtran:
+
+    copy_chunks:false
+    progressive:true
+    jpegrescan:false
+
+optipng:
+
+    level:6
+    interlace:false
+
+pngcrush:
+
+    chunks:alla
+    brute:false
+
+pngout:
+
+    copy_chunks:false
+    strategy:0
+
+pngquant:
+
+   quality:100..100 
+   speed:3
+
+svgo:
+
