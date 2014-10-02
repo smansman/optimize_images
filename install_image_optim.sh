@@ -21,6 +21,7 @@ yum -y install libjpeg-turbo-*
 yum -y install libjpeg-turbo
 JPEGOPTIM_VERSION=1.4.1
 PNGCRUSH_VERSION=1.7.77
+PNGOUT_VERSION=20130221
 cd /tmp
 curl -O http://www.kokkonen.net/tjko/src/jpegoptim-$JPEGOPTIM_VERSION.tar.gz
 tar zxf jpegoptim-$JPEGOPTIM_VERSION.tar.gz
@@ -32,6 +33,13 @@ curl -O http://iweb.dl.sourceforge.net/project/pmt/pngcrush/$PNGCRUSH_VERSION/pn
 tar zxf pngcrush-$PNGCRUSH_VERSION.tar.gz
 cd pngcrush-$PNGCRUSH_VERSION
 make && cp -f pngcrush /usr/local/bin
+
+cd /tmp
+curl -O http://static.jonof.id.au/dl/kenutils/pngout-$PNGOUT_VERSION-linux.tar.gz
+tar zxf pngout-$PNGOUT_VERSION-linux.tar.gz
+cd pngout-$PNGOUT_VERSION-linux/x86_64
+cp -f pngout /usr/local/bin
+
 gem install image_optim
 
 
