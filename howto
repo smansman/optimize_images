@@ -2,3 +2,17 @@
 for i in $(find /YOUR_FOLDERS_HERE/ -iname "*.bmp" -type f |grep 'moralis_olp' |grep -v 'moralis_olp*.bmp'); do rm -f $i; done
 for i in $(find /YOUR_FOLDER_HERE/ -iname "*.bmp" -type f |grep 'anilikiViasmos' |grep -v 'anilikiViasmos*.bmp'); do rm -f $i; done
 find /home/YOUR_FOLDER/mediafiles/ -type f |grep -v -i -w '^.*\.\(jpg\|gif\|png\|jpeg\|bmp\|swf\|doc\|pdf\|csv\|docx\|xls\|xlsx\|odt\|tif\|zip\|pptx\|m4p[av|\flv\|f4v\|mp[34]\)$' |grep -v 'image.ash\|image[1-3].ash'|grep -v  exe
+
+find /YOUR_FOLDER_HERE/ -type f |grep -i -w '^.*\.\(jpg\)$'|awk '{print "\""$0"\"" }'> /tmp/mogrify.jpg.txt
+
+###########################################
+#for getting what to mogrify and execute it
+###########################################
+#find what we need and add " so we can handle whitapsaces in folders or dirs
+find /YOUR_FOLDER_HERE/ -type f |grep -i -w '^.*\.\(jpg\)$'|awk '{print "\""$0"\"" }'> /tmp/mogrify.jpg.txt
+#now add our mogrify command and output to file
+while read p; do echo mogrify -verbose -resize 1024x768'\>' \"$p\"; done < /tmp/mogrify.jpg.txt  > /tmp/toxec.txt
+#jst to test first 2 lines skip in batch
+head -n2 /tmp/toxec.txt > /tmp/toexec2.txt
+#and finally use awk to execute the  /tmp/toxec.txt
+awk '{system ($0)}' /tmp/toexec2.txt 
