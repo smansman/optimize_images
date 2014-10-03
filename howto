@@ -16,3 +16,10 @@ while read p; do echo mogrify -verbose -resize 1024x768'\>' \"$p\"; done < /tmp/
 head -n2 /tmp/toxec.txt > /tmp/toexec2.txt
 #and finally use awk to execute the  /tmp/toxec.txt
 awk '{system ($0)}' /tmp/toexec2.txt 
+
+
+
+##############################
+#alternative METHOD not tested
+##############################
+find * -iname '*.jpg' -print0 | xargs -0 mogrify -resize 800x800\> -monitor -format jpg
