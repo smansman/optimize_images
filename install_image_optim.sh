@@ -13,6 +13,9 @@
 #install imagemagick
 yum -y install ImageMagick.*
 
+#instel jpegoptim
+yum -y install jpegoptim
+
 #install ruby and gem
 yum -y install ruby
 yum -y install rubygems
