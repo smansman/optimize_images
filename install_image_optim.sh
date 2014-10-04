@@ -9,7 +9,11 @@
 
 
 
-#for redhat 
+#for redhatyum install gcc gcc-c++ make openssl-devel
+#install gcc and other things needed
+yum -y install gcc gcc-c++ make openssl-devel
+yum -y groupinstall 'Development Tools'
+
 #install imagemagick
 yum -y install ImageMagick.*
 
